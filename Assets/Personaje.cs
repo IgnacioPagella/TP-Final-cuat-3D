@@ -7,6 +7,7 @@ public class Personaje : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
+    int counter;
     
 
     int hasJump;
@@ -44,5 +45,12 @@ public class Personaje : MonoBehaviour
            
         }
         
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Obstaculo")
+        {
+            counter++;
+        }
     }
 }
