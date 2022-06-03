@@ -7,7 +7,7 @@ public class Personaje : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
-    public int maxJumps;
+    
 
     int hasJump;
     Rigidbody rb;
@@ -15,7 +15,7 @@ public class Personaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hasJump = maxJumps;
+        
         rb = GetComponent<Rigidbody>();
     }
 
@@ -38,17 +38,11 @@ public class Personaje : MonoBehaviour
         {
             transform.Rotate(0, -rotationSpeed, 0);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            hasJump--;
+           
         }
-        void OnCollisionEnter(Collision col)
-        {
-            if(col.gameObject.tag == "ground")
-            {
-                hasJump = maxJumps;
-            }
-        }
+        
     }
 }
