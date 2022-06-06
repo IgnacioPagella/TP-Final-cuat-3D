@@ -9,6 +9,9 @@ public class Personaje : MonoBehaviour
     public float rotationSpeed;
     public float jumpForce;
     public Text txtTime;
+    int counter;
+    public Text derrivos;
+   
     
     
 
@@ -25,6 +28,7 @@ public class Personaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         float elapsedTime = Time.time;
        txtTime.text = Mathf.Floor(elapsedTime).ToString();
         if (Input.GetKey(KeyCode.W))
@@ -52,7 +56,7 @@ public class Personaje : MonoBehaviour
     }
     //void OnCollisionEnter(Collision col)
     //{
-    //    if (col.gameObject.name == "obstaculo")
+    //    if (col.gameObject.name == "personaje")
     //    {
     //        counter++;
     //    }
