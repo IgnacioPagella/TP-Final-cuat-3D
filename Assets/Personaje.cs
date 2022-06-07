@@ -9,11 +9,10 @@ public class Personaje : MonoBehaviour
     public float rotationSpeed;
     public float jumpForce;
     public Text txtTime;
-    int counter;
-    public Text derrivos;
-   
-    
-    
+   public  int counter;
+    public Text txtderrivos;
+    public GameObject player;
+    public Text txtgameOver;
 
     int hasJump;
     Rigidbody rb;
@@ -21,7 +20,7 @@ public class Personaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        txtgameOver.enabled = (false);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -54,11 +53,19 @@ public class Personaje : MonoBehaviour
         }
         
     }
-    //void OnCollisionEnter(Collision col)
-    //{
-    //    if (col.gameObject.name == "personaje")
-    //    {
-    //        counter++;
-    //    }
-    //}
+    void OnCollisionEnter(Collision col)
+    {
+       // if (col.gameObject.name == "obstaculo")
+        {
+            counter++;
+            txtderrivos.text = counter.ToString();
+        }
+        if (counter >  3)
+        {
+            player.SetActive(false);
+            txtTime.enabled = false;
+            txtderrivos.enabled = false;
+            txtgameOver.enabled = true;
+        }
+    }
 }
