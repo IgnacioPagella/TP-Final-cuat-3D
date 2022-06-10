@@ -13,6 +13,7 @@ public class Personaje : MonoBehaviour
     public Text txtderrivos;
     public GameObject player;
     public Text txtgameOver;
+    public GameObject camara;
 
     int hasJump;
     Rigidbody rb;
@@ -20,6 +21,7 @@ public class Personaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camara.SetActive(false);
         txtgameOver.enabled = (false);
         rb = GetComponent<Rigidbody>();
     }
@@ -55,17 +57,18 @@ public class Personaje : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
-       // if (col.gameObject.name == "obstaculo")
+       if (col.gameObject.tag == "obstaculo")
         {
             counter++;
             txtderrivos.text = counter.ToString();
         }
-        if (counter >  3)
+        if (counter >=  3)
         {
             player.SetActive(false);
             txtTime.enabled = false;
             txtderrivos.enabled = false;
             txtgameOver.enabled = true;
+            camara.SetActive(true);
         }
     }
 }
