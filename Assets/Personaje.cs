@@ -14,6 +14,7 @@ public class Personaje : MonoBehaviour
     public GameObject player;
     public Text txtgameOver;
     public GameObject camara;
+    public Text txtMeta;
 
     int hasJump;
     Rigidbody rb;
@@ -23,6 +24,7 @@ public class Personaje : MonoBehaviour
     {
         camara.SetActive(false);
         txtgameOver.enabled = (false);
+        txtMeta.enabled = (false);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -68,6 +70,18 @@ public class Personaje : MonoBehaviour
             txtTime.enabled = false;
             txtderrivos.enabled = false;
             txtgameOver.enabled = true;
+            camara.SetActive(true);
+        }
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Meta")
+        {
+            player.SetActive(false);
+            txtTime.enabled = false;
+            txtMeta.enabled = true;
+            txtderrivos.enabled = false;
+            txtgameOver.enabled = false;
             camara.SetActive(true);
         }
     }
