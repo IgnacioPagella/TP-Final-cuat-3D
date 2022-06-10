@@ -9,12 +9,13 @@ public class Personaje : MonoBehaviour
     public float rotationSpeed;
     public float jumpForce;
     public Text txtTime;
-   public  int counter;
+    public  int counter;
     public Text txtderrivos;
     public GameObject player;
     public Text txtgameOver;
     public GameObject camara;
     public Text txtMeta;
+    public GameObject objectToClone;
 
     int hasJump;
     Rigidbody rb;
