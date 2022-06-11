@@ -803,7 +803,7 @@ RectTransform:
   - {fileID: 1413497235}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.43}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1163,7 +1163,8 @@ MonoBehaviour:
   txtgameOver: {fileID: 2053407606}
   camara: {fileID: 297503841}
   txtMeta: {fileID: 1413497236}
-  objectToClone: {fileID: 0}
+  objectToClone: {fileID: 5113344831327690880, guid: 34206326d2db6f64a99ee4869e695140,
+    type: 3}
 --- !u!54 &665278822
 Rigidbody:
   m_ObjectHideFlags: 0

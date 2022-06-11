@@ -27,6 +27,8 @@ public class Personaje : MonoBehaviour
         txtgameOver.enabled = (false);
         txtMeta.enabled = (false);
         rb = GetComponent<Rigidbody>();
+        
+
     }
 
     // Update is called once per frame
@@ -84,6 +86,8 @@ public class Personaje : MonoBehaviour
             txtderrivos.enabled = false;
             txtgameOver.enabled = false;
             camara.SetActive(true);
+            Instantiate(objectToClone);
+           
         }
     }
 }
