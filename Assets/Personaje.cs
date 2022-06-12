@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Personaje : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class Personaje : MonoBehaviour
     public float jumpForce;
     public Text txtTime;
     public  int counter;
-    int counterInstantiate = 0;
     public Text txtderrivos;
     public GameObject player;
     public Text txtgameOver;
@@ -103,5 +103,9 @@ public class Personaje : MonoBehaviour
         }
 
     }
-   
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }
