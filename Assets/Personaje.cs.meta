@@ -3,7 +3,15 @@ guid: 7aabaf5048461714d8484f0c05b3abff
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - txtTime: {instanceID: 0}
+  - txtderrivos: {instanceID: 0}
+  - player: {instanceID: 0}
+  - txtgameOver: {instanceID: 0}
+  - camara: {instanceID: 0}
+  - txtMeta: {instanceID: 0}
+  - objectToClone: {fileID: 5113344831327690880, guid: 34206326d2db6f64a99ee4869e695140,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
