@@ -17,6 +17,7 @@ public class Personaje : MonoBehaviour
     public GameObject camara;
     public Text txtMeta;
     public GameObject objectToClone;
+    public int Contador;
    
 
     bool hasJump;
@@ -100,8 +101,13 @@ public class Personaje : MonoBehaviour
             txtderrivos.enabled = false;
             txtgameOver.enabled = false;
             camara.SetActive(true);
+            while (Contador < 10)
+            {
+                Instantiate(objectToClone);
+                objectToClone.transform.position = new Vector3(0, 50, 0);
+                Contador++;
+            }
 
-           
         }
 
     }
