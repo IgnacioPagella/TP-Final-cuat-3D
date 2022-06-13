@@ -21,6 +21,7 @@ public class Personaje : MonoBehaviour
 
     bool hasJump;
     Rigidbody rb;
+    float elapsedTime;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +38,9 @@ public class Personaje : MonoBehaviour
     void Update()
     {
        
-        float elapsedTime = Time.time;
-       txtTime.text = Mathf.Floor(elapsedTime).ToString();
+        elapsedTime = Time.timeSinceLevelLoad; ;
+        txtTime.text = Mathf.Floor(elapsedTime).ToString();
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, movementSpeed);
@@ -72,7 +74,7 @@ public class Personaje : MonoBehaviour
             hasJump = true;
         }
 
-       if (col.gameObject.tag == "obstaculo")
+        if (col.gameObject.tag == "obstaculo")
         {
             counter++;
             txtderrivos.text = counter.ToString();
@@ -84,13 +86,13 @@ public class Personaje : MonoBehaviour
             txtderrivos.enabled = false;
             txtgameOver.enabled = true;
             camara.SetActive(true);
-            Instantiate(objectToClone);
-            counterInstantiate++;
+            //Instantiate(objectToClone);
+            ResetScene();
         }
     }
     void OnTriggerEnter(Collider col)
     {
-       if (col.gameObject.tag == "Meta")
+        if (col.gameObject.tag == "Meta")
         {
             player.SetActive(false);
             txtTime.enabled = false;
