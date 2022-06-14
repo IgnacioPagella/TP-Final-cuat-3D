@@ -10,7 +10,7 @@ public class Personaje : MonoBehaviour
     public float rotationSpeed;
     public float jumpForce;
     public Text txtTime;
-    public  int counter;
+    public int counter;
     public Text txtderrivos;
     public GameObject player;
     public Text txtgameOver;
@@ -18,11 +18,11 @@ public class Personaje : MonoBehaviour
     public Text txtMeta;
     public GameObject objectToClone;
     public int Contador;
-   
+    
 
     bool hasJump;
     Rigidbody rb;
-    float elapsedTime;
+    float elapsedTime; 
 
     // Start is called before the first frame update
     void Start()
@@ -45,21 +45,24 @@ public class Personaje : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, movementSpeed);
+         
             
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(0, 0, -movementSpeed);
+           
           
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, rotationSpeed, 0);
+          
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, -rotationSpeed, 0);
-         
+          
         }
         if (Input.GetKeyDown(KeyCode.Space) && hasJump)
         {
@@ -114,6 +117,6 @@ public class Personaje : MonoBehaviour
     public void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    } 
 
 }
