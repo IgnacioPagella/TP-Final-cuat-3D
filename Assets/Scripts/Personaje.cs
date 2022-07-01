@@ -90,7 +90,6 @@ public class Personaje : MonoBehaviour
             txtderrivos.enabled = false;
             txtgameOver.enabled = true;
             camara.SetActive(true);
-            //Instantiate(objectToClone);
             ResetScene();
         }
     }
